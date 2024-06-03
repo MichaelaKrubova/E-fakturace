@@ -1,0 +1,42 @@
+@use "../abstracts" as *;
+@use "../components" as *;
+
+
+.header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $primary;
+    height: 10rem;
+    @include flexCenter;
+    .logo {
+        @include flexCenterVer;
+    }
+    nav {
+        max-width: $max-width;
+        margin: $gap-hor;
+        width: 100%;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+    }
+    .nav-menu {
+        width: 50%;
+    }
+    .nav-list {
+        display: flex;
+        height: 100%;
+        .nav-item {
+            @include flexCenter;
+            width: calc(100%/5);
+        }
+    }
+
+    .nav-toggle, 
+    .nav-close {
+        display: none;
+    }
+}

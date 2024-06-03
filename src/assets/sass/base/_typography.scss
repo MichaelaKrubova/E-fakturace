@@ -1,0 +1,83 @@
+@use "../abstracts" as *;
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "solpera", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 2.5rem;
+}
+h4 {
+    font-size: 2.5rem;
+}
+h5 {
+    font-size: 2.4rem;
+}
+h6 {
+    font-size: 2.4rem;
+    
+}
+
+p, a {
+    
+    font-family: "solpera", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.6rem;
+    strong {
+        font-weight: 700;
+    }
+}
+
+
+article, 
+hgroup  {
+    strong {
+        font-weight: 700;
+    }
+    ul {
+        margin-left: 40px;
+    }
+    li {
+        font-size: 1.6rem;
+    }
+}
+
+
+@media only screen and ($bp-1024) {
+    h1, h2 {
+        font-size: 3rem;
+    }
+    h3 {
+        font-size: 3.0rem;
+    }
+    h4 {
+        font-size: 2.5rem;
+    }
+    h5 {
+        font-size: 2.4rem;
+    }
+    h6 {
+        font-size: 2.4rem;
+        
+    }
+}
+
+@media only screen and ($bp-1024) {
+    h1, h2 {
+        font-size: 2.8rem;
+    }
+    h3 {
+        font-size: 2.6rem;
+    }
+}

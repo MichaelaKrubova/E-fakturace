@@ -1,0 +1,690 @@
+{
+  "faktury": [
+    {
+      "id": "8dc0",
+      "documentNumber": "20240001",
+      "supplier": {
+        "title": "Dodavatel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "purchaser": {
+        "title": "Odběratel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "paymentMethods": {
+        "paymentMethod": "Převodem",
+        "accountNumber": "",
+        "bankCode": "",
+        "vs": "20240001"
+      },
+      "dates": {
+        "startDate": "2. 6. 2024",
+        "payStartDate": "9. 6. 2024"
+      },
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1,
+          "unit": "",
+          "item": "jhghjg",
+          "price": "0454545",
+          "totalPrice": "454545.00"
+        }
+      ],
+      "totalSum": "454545.00"
+    },
+    {
+      "id": "8e0c",
+      "documentNumber": "20240003",
+      "supplier": {
+        "title": "Dodavatel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "purchaser": {
+        "title": "Odběratel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "paymentMethods": {
+        "paymentMethod": "Převodem",
+        "accountNumber": "",
+        "bankCode": "",
+        "vs": "20240003"
+      },
+      "dates": {
+        "startDate": "2. 6. 2024",
+        "payStartDate": "9. 6. 2024"
+      },
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1,
+          "unit": "",
+          "item": "",
+          "price": "04545",
+          "totalPrice": "4545.00"
+        }
+      ],
+      "totalSum": "4545.00"
+    },
+    {
+      "id": "2751",
+      "documentNumber": "20240003",
+      "supplier": {
+        "title": "Dodavatel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "purchaser": {
+        "title": "Odběratel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "paymentMethods": {
+        "paymentMethod": "Převodem",
+        "accountNumber": "",
+        "bankCode": "",
+        "vs": "20240003"
+      },
+      "dates": {
+        "startDate": "2. 6. 2024",
+        "payStartDate": "9. 6. 2024"
+      },
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1,
+          "unit": "",
+          "item": "",
+          "price": "04545",
+          "totalPrice": "4545.00"
+        }
+      ],
+      "totalSum": "4545.00"
+    },
+    {
+      "id": "7325",
+      "documentNumber": "20240004",
+      "supplier": {
+        "title": "Dodavatel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "purchaser": {
+        "title": "Odběratel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "paymentMethods": {
+        "paymentMethod": "Převodem",
+        "accountNumber": "",
+        "bankCode": "",
+        "vs": "20240004"
+      },
+      "dates": {
+        "startDate": "2. 6. 2024",
+        "payStartDate": "9. 6. 2024"
+      },
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1,
+          "unit": "",
+          "item": "",
+          "price": "04545",
+          "totalPrice": "4545.00"
+        }
+      ],
+      "totalSum": "4545.00"
+    },
+    {
+      "id": "7138",
+      "documentNumber": "20240006",
+      "supplier": {
+        "title": "Dodavatel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "purchaser": {
+        "title": "Odběratel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "paymentMethods": {
+        "paymentMethod": "Převodem",
+        "accountNumber": "",
+        "bankCode": "",
+        "vs": "20240006"
+      },
+      "dates": {
+        "startDate": "2. 6. 2024",
+        "payStartDate": "9. 6. 2024"
+      },
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1,
+          "unit": "",
+          "item": "",
+          "price": "04545",
+          "totalPrice": "4545.00"
+        }
+      ],
+      "totalSum": "4545.00"
+    },
+    {
+      "id": "9c60",
+      "documentNumber": "20240007",
+      "supplier": {
+        "title": "Dodavatel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "purchaser": {
+        "title": "Odběratel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "paymentMethods": {
+        "paymentMethod": "Převodem",
+        "accountNumber": "",
+        "bankCode": "",
+        "vs": "20240007"
+      },
+      "dates": {
+        "startDate": "2. 6. 2024",
+        "payStartDate": "9. 6. 2024"
+      },
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1,
+          "unit": "",
+          "item": "",
+          "price": 0,
+          "totalPrice": ""
+        }
+      ],
+      "totalSum": "0.00"
+    },
+    {
+      "id": "2a58",
+      "documentNumber": "20240008",
+      "supplier": {
+        "title": "Dodavatel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "purchaser": {
+        "title": "Odběratel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "paymentMethods": {
+        "paymentMethod": "Převodem",
+        "accountNumber": "",
+        "bankCode": "",
+        "vs": "20240008"
+      },
+      "dates": {
+        "startDate": "2. 6. 2024",
+        "payStartDate": "9. 6. 2024"
+      },
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1,
+          "unit": "",
+          "item": "",
+          "price": 0,
+          "totalPrice": ""
+        }
+      ],
+      "totalSum": "0.00"
+    },
+    {
+      "id": "7a94",
+      "documentNumber": "20240009",
+      "supplier": {
+        "title": "Dodavatel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "purchaser": {
+        "title": "Odběratel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "paymentMethods": {
+        "paymentMethod": "Převodem",
+        "accountNumber": "",
+        "bankCode": "",
+        "vs": "20240009"
+      },
+      "dates": {
+        "startDate": "2. 6. 2024",
+        "payStartDate": "9. 6. 2024"
+      },
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1,
+          "unit": "",
+          "item": "",
+          "price": 0,
+          "totalPrice": ""
+        }
+      ],
+      "totalSum": "0.00"
+    },
+    {
+      "id": "b5ba",
+      "documentNumber": "20240010",
+      "supplier": {
+        "title": "Dodavatel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "purchaser": {
+        "title": "Odběratel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "paymentMethods": {
+        "paymentMethod": "Převodem",
+        "accountNumber": "",
+        "bankCode": "",
+        "vs": "20240010"
+      },
+      "dates": {
+        "startDate": "2. 6. 2024",
+        "payStartDate": "9. 6. 2024"
+      },
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1,
+          "unit": "",
+          "item": "",
+          "price": 0,
+          "totalPrice": ""
+        }
+      ],
+      "totalSum": "0.00"
+    },
+    {
+      "id": "e5ca",
+      "documentNumber": "20240011",
+      "supplier": {
+        "title": "Dodavatel",
+        "ico": "",
+        "dic": "",
+        "companyName": "",
+        "street": "",
+        "postalCode": "",
+        "city": ""
+      },
+      "purchaser": {
+        "title": "Odběratel",
+        "ico": "",
+        "dic": "",
+        "companyName": "",
+        "street": "",
+        "postalCode": "",
+        "city": ""
+      },
+      "paymentMethods": {
+        "paymentMethod": "Převodem",
+        "accountNumber": "",
+        "bankCode": "",
+        "vs": "20240011"
+      },
+      "dates": {
+        "startDate": "2. 6. 2024",
+        "payStartDate": "9. 6. 2024"
+      },
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1,
+          "unit": "",
+          "item": "",
+          "price": 0,
+          "totalPrice": ""
+        }
+      ],
+      "totalSum": "0.00"
+    },
+    {
+      "id": "f915",
+      "documentNumber": "20240012",
+      "supplier": {
+        "title": "Dodavatel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "purchaser": {
+        "title": "Odběratel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "paymentMethods": {
+        "paymentMethod": "Převodem",
+        "accountNumber": "",
+        "bankCode": "",
+        "vs": "20240012"
+      },
+      "dates": {
+        "startDate": "2. 6. 2024",
+        "payStartDate": "9. 6. 2024"
+      },
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1,
+          "unit": "",
+          "item": "",
+          "price": 0,
+          "totalPrice": ""
+        }
+      ],
+      "totalSum": "0.00"
+    },
+    {
+      "id": "2599",
+      "documentNumber": "20240013",
+      "supplier": {
+        "title": "Dodavatel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "purchaser": {
+        "title": "Odběratel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "paymentMethods": {
+        "paymentMethod": "Převodem",
+        "accountNumber": "",
+        "bankCode": "",
+        "vs": "20240013"
+      },
+      "dates": {
+        "startDate": "2. 6. 2024",
+        "payStartDate": "9. 6. 2024"
+      },
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1,
+          "unit": "",
+          "item": "",
+          "price": "04545",
+          "totalPrice": "4545.00"
+        }
+      ],
+      "totalSum": "4545.00"
+    },
+    {
+      "id": "14f5",
+      "documentNumber": "20240014",
+      "supplier": {
+        "title": "Dodavatel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "purchaser": {
+        "title": "Odběratel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "paymentMethods": {
+        "paymentMethod": "Převodem",
+        "accountNumber": "45646546",
+        "bankCode": "0100",
+        "vs": "20240014"
+      },
+      "dates": {
+        "startDate": "3. 6. 2024",
+        "payStartDate": "10. 6. 2024"
+      },
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1,
+          "unit": "",
+          "item": "jhghjg",
+          "price": "05445",
+          "totalPrice": "5445.00"
+        },
+        {
+          "id": 2,
+          "quantity": 1,
+          "unit": "",
+          "item": "lkjl",
+          "price": "0121221",
+          "totalPrice": "121221.00"
+        }
+      ],
+      "totalSum": "126666.00"
+    },
+    {
+      "id": "4ccf",
+      "documentNumber": "20240015",
+      "supplier": {
+        "title": "Dodavatel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "purchaser": {
+        "title": "Odběratel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "paymentMethods": {
+        "paymentMethod": "Převodem",
+        "accountNumber": "45646546",
+        "bankCode": "0100",
+        "vs": "20240015"
+      },
+      "dates": {
+        "startDate": "3. 6. 2024",
+        "payStartDate": "10. 6. 2024"
+      },
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1,
+          "unit": "kg",
+          "item": "jhghjg",
+          "price": "04545",
+          "totalPrice": "4545.00"
+        },
+        {
+          "id": 2,
+          "quantity": 1,
+          "unit": "",
+          "item": "",
+          "price": "04545",
+          "totalPrice": "4545.00"
+        },
+        {
+          "id": 3,
+          "quantity": 1,
+          "unit": "",
+          "item": "",
+          "price": "04545",
+          "totalPrice": "4545.00"
+        },
+        {
+          "id": 4,
+          "quantity": 1,
+          "unit": "",
+          "item": "",
+          "price": "04545",
+          "totalPrice": "4545.00"
+        }
+      ],
+      "totalSum": "18180.00"
+    },
+    {
+      "id": "8328",
+      "documentNumber": "20240016",
+      "supplier": {
+        "title": "Dodavatel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "purchaser": {
+        "title": "Odběratel",
+        "ico": "02412519",
+        "dic": "",
+        "companyName": "Michaela Krubová",
+        "street": "Pozďátky/35",
+        "postalCode": 67501,
+        "city": "Slavičky"
+      },
+      "paymentMethods": {
+        "paymentMethod": "Hotově",
+        "accountNumber": "",
+        "bankCode": "",
+        "vs": "20240016"
+      },
+      "dates": {
+        "startDate": "3. 6. 2024",
+        "payStartDate": "10. 6. 2024"
+      },
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1,
+          "unit": "kg",
+          "item": "jhghjg",
+          "price": "078578",
+          "totalPrice": "78578.00"
+        },
+        {
+          "id": 2,
+          "quantity": 1,
+          "unit": "",
+          "item": "78578",
+          "price": "078575",
+          "totalPrice": "78575.00"
+        }
+      ],
+      "totalSum": "157153.00"
+    }
+  ],
+  "faktury-pdf": []
+}

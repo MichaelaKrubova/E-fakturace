@@ -1,0 +1,42 @@
+{
+  "name": "efakturace",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "clean": "rimraf build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "json-server -p3001 --watch db.json"
+  },
+  "dependencies": {
+    "@react-pdf/renderer": "^3.4.4",
+    "axios": "^1.7.2",
+    "react": "^18.2.0",
+    "react-datepicker": "^6.9.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.2.1",
+    "react-responsive": "^10.0.0",
+    "react-router-dom": "^6.23.1",
+    "sass": "^1.77.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "json-server": "^1.0.0-beta.0",
+    "vite": "^5.2.0"
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "index.js",
+  "author": "Misha Krubova",
+  "license": "ISC",
+  "keywords": []
+}

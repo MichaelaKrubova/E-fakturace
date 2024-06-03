@@ -1,0 +1,30 @@
+@use "../abstracts" as *;
+@use "../components" as *;
+
+.main-content {
+    margin: auto;
+}
+
+.top-section {
+    max-width: $max-width;
+    padding: $gap-hor;
+    margin: $gap-ver;
+
+}
+
+.flex-cont {
+    display: flex;
+}
+
+.width-10 {
+    width: 10%;
+}
+.width-20 {
+    width: 20%;
+}
+.width-50 {
+    width: 50%;
+}
+.width-30 {
+    width: 30%;
+}

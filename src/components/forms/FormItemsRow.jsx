@@ -40,7 +40,7 @@ const FormItemsRow = ({ className, rowId, handleInputChange, values }) => {
                 type="number"
                 placeholder="Cena"
                 className="width-20"
-                step="0.01"
+                step="0.1"
             />
             <FormInput 
                 id={`${rowId}-totalPrice`} 

@@ -1,25 +1,35 @@
-import DocItems from "../components/forms/DocItems"
-import Heading1 from "../components/headings/Heading1";
-import Form from "../components/forms/Form";
-import FormInput from "../components/forms/FormInput";
-import Section from "../components/Section";
-import FormSelect from "../components/forms/FormSelect";
-import CompanyForm from "../components/forms/CompanyForm";
-import axios from 'axios';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-
-import docService from '../services/faktury'
-import { useState, useEffect, createContext  } from 'react';
-import Button from "../components/buttons/Button";
-import NewPdf from "../pdf/faktury-pdf";
+//react 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { useState, useEffect, createContext  } from 'react';
+
+//components
+import Section from "../components/Section";
+import Faktura from "../components/Faktura";
+
+//server/database
+import axios from 'axios';
+import docService from '../services/forms'
+
+//imported components
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import NewPdf from "../pdf/NewPdf";
 import { PDFViewer } from '@react-pdf/renderer';
+
+//custom hooks
+import { useFormState } from '../hooks/useFormState';
+import { useFetchCompanyData } from '../hooks/useFetchCompanyData';
 
 
 
 const NewDoc = () => {
+    //Title as heading of the page
+
+    //db url
+    const docsUrl = 'http://localhost:3001/faktury'
+    const accountUrl = 'http://localhost:3001/my-account'
+
     //documents from db:
     const [documents, setDocuments] = useState([]);
 
@@ -28,7 +38,9 @@ const NewDoc = () => {
 
     //set default docNumber and add it in main heading
     const [docNumber, setNumber] = useState('20240001');
+
     const [isCustomNumber, setIsCustomNumber] = useState(false);
+    
     // Function to update document number
     const updateDocumentNumber = () => {
         axios.get('http://localhost:3001/faktury')
@@ -63,16 +75,14 @@ const NewDoc = () => {
     
       useEffect(() => {
         updateDocumentNumber();
-      }, []); // Empty dependency array means this effect runs once on mount
+      }, []); 
     
 
-    // Bank values
-        const [bankFormValues, setBankFormValues] = useState({
-            accountNumber: '',
-            bankCode: '',
-            vs: ''
-        });
-
+      const [bankFormValues, handleBankInputChange, setBankFormValues] = useFormState({
+        accountNumber: '',
+        bankCode: '',
+        vs: ''
+    });
     
     //select payment value
     const [selectValue, setSelectValue] = useState({
@@ -95,7 +105,8 @@ const NewDoc = () => {
     const [payStartDate, setPayStartDate] = useState(nextWeek);
 
     //suppliers data
-    const [supplierFormValues, setSupplierFormValues] = useState({
+    
+    const [supplierFormValues, handleSupplierInputChange, setSupplierFormValues] = useFormState({
         title: 'Dodavatel',
         ico: '',
         companyName: '',
@@ -106,7 +117,7 @@ const NewDoc = () => {
     });
 
     //purchaser's data
-    const [purchaserFormValues, setPurchaserFormValues] = useState({
+    const [purchaserFormValues, handlePurchaserInputChange, setPurchaserFormValues] = useFormState({
         title: 'Odběratel',
         ico: '',
         companyName: '',
@@ -117,7 +128,9 @@ const NewDoc = () => {
     });
 
     //items in rows
-    const [rows, setRows] = useState([]);
+    const [rows, setRows] = useState([
+        { id: 1, quantity: 1, unit: '', item: '', price: '', totalPrice: '' }
+    ]);
 
     //total sum price
     const [totalSum, setTotalSum] = useState(0);
@@ -137,10 +150,47 @@ const NewDoc = () => {
         useEffect(() => {
             setBankFormValues(prevValues => ({
                 ...prevValues,
-                vs: docNumber
+                 vs: docNumber || ''
             }));
         }, [docNumber]);
 
+
+    //fill the company data, if are stored in my-account db
+    const getCompanyData = async () => {
+        try {
+            const initialData = await docService.getAll(accountUrl);
+            if (initialData.length > 0) {
+                const data = initialData[0];
+                console.log(initialData);
+                // Populate form values
+                setSupplierFormValues({
+                    title: supplierFormValues.title,
+                    ico: data.supplier.ico,
+                    companyName: data.supplier.companyName,
+                    dic: data.supplier.dic,
+                    street: data.supplier.street,
+                    postalCode: data.supplier.postalCode,
+                    city: data.supplier.city
+                });
+
+                setBankFormValues({
+                    accountNumber: data.paymentMethods.accountNumber,
+                    bankCode: data.paymentMethods.bankCode,
+                });
+                /*
+                setContactValues({
+                    phone: data.contact.phone,
+                    email: data.contact.email
+                });*/
+            }
+        } catch (error) {
+            console.error('Error fetching company data:', error);
+        }
+    };
+
+    useEffect(() => {
+        getCompanyData();
+    }, []);
 
     const handleRowsChange = (updatedRows) => {
         setRows(updatedRows);
@@ -151,59 +201,10 @@ const NewDoc = () => {
     };
     
 
-   // Handler for supplier form inputs
-    const handleSupplierInputChange = (e) => {
-        const { name, value } = e.target;
-        setSupplierFormValues({
-            ...supplierFormValues,
-            [name]: value
-        });
-    };
 
-    // Handler for purchaser form inputs
-    const handlePurchaserInputChange = (e) => {
-        const { name, value } = e.target;
-        setPurchaserFormValues({
-            ...purchaserFormValues,
-            [name]: value
-        });
-    };
 
-    const fetchDataAndUpdateForm = async (formValues, setFormValues) => {
-        try {
-            const response = await axios.get(`https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/${formValues.ico}`);
-            const data = response.data;
-    
-            if (data) {
-                const { ico, obchodniJmeno, sidlo, stav } = data;
-                const { nazevUlice, cisloOrientacni, cisloDomovni, nazevObce, nazevCastiObce, psc } = sidlo;
-                const cp = cisloOrientacni  ? `${cisloDomovni}/${cisloOrientacni}` : cisloDomovni;
-                const address = nazevUlice  ? `${nazevUlice} ${cp}` : `${nazevCastiObce}/${cp}`;
-
-    
-                setFormValues({
-                    ...formValues,
-                    ico: ico,
-                    companyName: obchodniJmeno,
-                    street: address,
-                    city: nazevObce,
-                    postalCode: psc,
-                    stav: stav || ''
-                });
-            } else {
-                setFormValues({
-                    ...formValues,
-                    stav: 'IČO firmy nebylo nalezeno'
-                });
-            }
-        } catch (error) {
-            console.error('Error fetching company information:', error);
-            setFormValues({
-                ...formValues,
-                stav: 'Chyba při načítání dat'
-            });
-        }
-    };
+    //get the company from Ares API
+    const fetchDataAndUpdateForm = useFetchCompanyData();
     
     const handleIcoButtonClick = (e) => {
         e.preventDefault()
@@ -222,15 +223,19 @@ const NewDoc = () => {
     
       const addNumber = (e) => {
         e.preventDefault();
+        console.log('saveme');
         if (documents.length === 0) {
             // If there are no existing documents, set the default number directly from newNumber
             setNumber(newNumber);
             setIsCustomNumber(true); // Indicate that a custom number has been set
+            console.log('save3');
         } else if (documents.some(doc => doc.documentNumber === newNumber)) {
             alert('Toto číslo faktury již existuje!');
+            console.log('save2');
         } else {
             setNumber(newNumber);
             setIsCustomNumber(true); // Indicate that a custom number has been set
+            console.log('save');
         }
 
       }
@@ -242,14 +247,6 @@ const NewDoc = () => {
     
       }
 
-      const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setBankFormValues({
-            ...bankFormValues,
-            [name]: value
-        });
-
-      }
 
       const formatDate = (date) => {
         return date.toLocaleDateString('cs-CZ'); 
@@ -260,6 +257,7 @@ const NewDoc = () => {
         const formattedStartDate = formatDate(startDate);
         const formattedPaytDate = formatDate(payStartDate);
         const newDocument = {
+            documentTitle: `Faktura ${docNumber}`,
             documentNumber: docNumber,
             supplier: {
                 title: supplierFormValues.title,
@@ -294,9 +292,12 @@ const NewDoc = () => {
         };
 
         setDocument([...document, newDocument]);
+
         setLatestDocument(newDocument);
+
         setShowPdf(true); // Show the PDF viewer
-        docService.create(newDocument)
+        
+        docService.create(docsUrl, newDocument)
             .then(docToServer => {
                 setFaktury(faktury => [...faktury, docToServer]); // Update faktury with the new document
             })
@@ -305,7 +306,6 @@ const NewDoc = () => {
                 // Handle the error
             });
             saveDataToDatabase()
-            console.log(document);
     };
 
     const saveDataToDatabase = () => {
@@ -323,15 +323,6 @@ const NewDoc = () => {
             bankCode: '', 
             vs: docNumber
         })
-        setSupplierFormValues({
-            title: 'Dodavatel',
-            ico: '',
-            companyName: '',
-            dic: '',
-            street: '',
-            postalCode: '',
-            city: ''
-        })
         setPurchaserFormValues({
             title: 'Odběratel',
             ico: '',
@@ -348,79 +339,39 @@ const NewDoc = () => {
     }
 
     const lastDocument = documents[documents.length - 1];
-    console.log(documents[documents.length - 1]);
     
     return (
         <>
-            <Section className='page-hero'>
-                <Heading1 text={'Nová faktura: '} number={docNumber} />
-            </Section>
-            
+            <Faktura 
+                title="Nová faktura: "
+                docNumber={docNumber}
+                handleNewNumber={handleNewNumber}
+                newNumber={newNumber}
+                addNumber={addNumber}
+                supplierFormValues={supplierFormValues}
+                handleSupplierInputChange={handleSupplierInputChange}
+                handleIcoButtonClick={handleIcoButtonClick}
+                purchaserFormValues={purchaserFormValues}
+                handlePurchaserInputChange={handlePurchaserInputChange}
+                handleIcoButtonClickPurchaser={handleIcoButtonClickPurchaser}
+                selectValue={selectValue}
+                options={options}
+                handleSelectChange={handleSelectChange}
+                bankFormValues={bankFormValues}
+                handleBankInputChange={handleBankInputChange}
+                startDate={startDate}
+                setStartDate={setStartDate}
+                payStartDate={payStartDate}
+                setPayStartDate={setPayStartDate}
+                handleRowsChange={handleRowsChange}
+                rows={rows}
+                handleTotalSumChange={handleTotalSumChange}
+                totalSum={totalSum}
+                addNewDocument={addNewDocument}
+            />
+           
             <Section>
-                <FormInput text="Číslo faktury: " onChange={handleNewNumber} value={newNumber} hasButton={true} buttonText={'Uložit'} onButtonClick={addNumber} />
-            </Section>
-
-            <Section className="flex-cont">
-                <CompanyForm 
-                    formValues={supplierFormValues}
-                    handleInputChange={handleSupplierInputChange}
-                    handleButtonClick={handleIcoButtonClick}
-                    hasButton={true}
-                />
-
-                <CompanyForm 
-                    formValues={purchaserFormValues}
-                    handleInputChange={handlePurchaserInputChange}
-                    handleButtonClick={handleIcoButtonClickPurchaser}
-                    hasButton={true}
-                />
-            </Section>
-
-            <Section className="flex-cont">
-                <Form h2text="Platební údaje">
-                    <FormSelect
-                     text="Platební metoda"
-                     name="paymentMethod"
-                     value={selectValue.value}
-                     options={options}
-                     onChange={handleSelectChange}
-                     />
-                    {selectValue.name === "transfer" && (
-                        <>
-                            <FormInput text="Číslo účtu: " name="accountNumber" onChange={handleInputChange} value={bankFormValues.accountNumber} />
-                            <FormInput text="Kód banky: " name="bankCode" onChange={handleInputChange} value={bankFormValues.bankCode} />
-                            <FormInput text="Variabilní symbol: " name="vs" onChange={handleInputChange} value={bankFormValues.vs} />
-                        </>
-                    )}
-                </Form>
-                <Form h2text="Datumy">
-                    <div>
-                        <label>Datum vystavení:
-                            <DatePicker
-                            selected={startDate}
-                            onChange={(date) =>  setStartDate(date)}
-                            dateFormat="dd.MM.yyyy"
-                            />
-                        </label>
-                    </div>
-                    <div>
-                        <label>Datum splatnosti:
-                            <DatePicker
-                            selected={payStartDate}
-                            onChange={(date) =>  setPayStartDate(date)}
-                            dateFormat="dd.MM.yyyy"
-                            />
-                        </label>
-                    </div>
-                </Form>
-
-            </Section>
-            <Section>
-                <DocItems onRowsChange={handleRowsChange} onTotalSumChange={handleTotalSumChange} />
-                <Button text="Uložit" onClick={addNewDocument}/>
-            </Section>
-            <Section>
-                <PDFViewer  width="100%" height="600">
+                <PDFViewer  width="100%" height="1200">
                     <NewPdf document={lastDocument} />
                 </PDFViewer>
             </Section>

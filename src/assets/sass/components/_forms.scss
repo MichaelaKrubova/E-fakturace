@@ -5,11 +5,30 @@ fieldset {
     border: none;
 }
 
-.table-header {
+.docs-heading {
+    .table-header {
+        justify-content: space-between;
+    }
+}
+
+
+.table-rows {
     width: 100%;
     display: flex;
-    background: $grey-light;
     padding: 1rem;
+    justify-content: space-between;
+    background: rgb(249 249 249);
+    label {
+        display: block;
+    }
+    &:nth-of-type(2n + 1) {
+        background: rgb(255, 255, 255);
+    }
+}
+
+.table-header {
+    @extend .table-rows;
+    background: $grey-light!important;
     label {
         display: block;
     }

@@ -5,12 +5,8 @@ import Button from '../buttons/Button';
 import FormInput from './FormInput';
 
 
-const DocItems = ({onRowsChange, onTotalSumChange  }) => {
-    const [rows, setRows] = useState([
-        { id: 1, quantity: 1, unit: '', item: '', price: 0, totalPrice: '' }
-    ]);
-    const [totalSum, setTotalSum] = useState(0);
-
+const DocItems = ({ onRowsChange, onTotalSumChange, rows: initialRows, totalSum }) => {
+    const [rows, setRows] = useState(initialRows); // State for rows
     
     useEffect(() => {
         onRowsChange(rows);
@@ -43,9 +39,8 @@ const DocItems = ({onRowsChange, onTotalSumChange  }) => {
 
     // Update total price whenever rows change
     useEffect(() => {
-        const totalSum = rows.reduce((sum, row) => sum + Number(row.totalPrice), 0);
-        setTotalSum(totalSum.toFixed(2));
-        onTotalSumChange(totalSum.toFixed(2));
+        const newTotalSum = rows.reduce((sum, row) => sum + Number(row.totalPrice), 0).toFixed(2);
+        onTotalSumChange(newTotalSum);
     }, [rows, onTotalSumChange]);
 
     return (

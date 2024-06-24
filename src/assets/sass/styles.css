@@ -77,15 +77,36 @@ hgroup li {
     font-size: 2.6rem;
   }
 }
+.btn-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 fieldset {
   border: none;
 }
 
-.table-header {
+.docs-heading .table-header {
+  justify-content: space-between;
+}
+
+.table-rows, .table-header {
   width: 100%;
   display: flex;
-  background: rgb(228, 227, 227);
   padding: 1rem;
+  justify-content: space-between;
+  background: rgb(249, 249, 249);
+}
+.table-rows label, .table-header label {
+  display: block;
+}
+.table-rows:nth-of-type(2n + 1), .table-header:nth-of-type(2n + 1) {
+  background: rgb(255, 255, 255);
+}
+
+.table-header {
+  background: rgb(228, 227, 227) !important;
 }
 .table-header label {
   display: block;

@@ -25,8 +25,8 @@
       },
       "paymentMethods": {
         "paymentMethod": "Převodem",
-        "accountNumber": "5499144013",
-        "bankCode": "0800"
+        "accountNumber": "",
+        "bankCode": ""
       },
       "dates": {
         "startDate": "16. 6. 2024",
@@ -68,8 +68,8 @@
       },
       "paymentMethods": {
         "paymentMethod": "Převodem",
-        "accountNumber": "5499144013",
-        "bankCode": "0800",
+        "accountNumber": "",
+        "bankCode": "",
         "vs": "20240026"
       },
       "dates": {
@@ -101,12 +101,12 @@
         "city": "Slavičky"
       },
       "paymentMethods": {
-        "accountNumber": "5499144013",
-        "bankCode": "0800"
+        "accountNumber": "",
+        "bankCode": ""
       },
       "contact": {
-        "phone": "737315218",
-        "email": "petrkruba@seznam.cz"
+        "phone": "",
+        "email": "@"
       },
       "id": "1c8c"
     }

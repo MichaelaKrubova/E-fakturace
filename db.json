@@ -1,49 +1,6 @@
 {
   "faktury": [
-    {
-      "id": "57c2",
-      "documentTitle": "Faktura 20240024",
-      "documentNumber": "20240024",
-      "supplier": {
-        "title": "Dodavatel",
-        "ico": "88089444",
-        "dic": "",
-        "companyName": "Petr Kruba",
-        "street": "Pozďátky",
-        "postalCode": 67501,
-        "city": "Slavičky"
-      },
-      "purchaser": {
-        "title": "Odběratel",
-        "ico": "25565079",
-        "dic": "",
-        "companyName": "Instalatérství VTK, spol. s r.o.",
-        "street": "Hrotovická 176",
-        "postalCode": 67401,
-        "city": "Kožichovice"
-      },
-      "paymentMethods": {
-        "paymentMethod": "Převodem",
-        "accountNumber": "5499144013",
-        "bankCode": "0800",
-        "vs": "20240024"
-      },
-      "dates": {
-        "startDate": "12. 6. 2024",
-        "payStartDate": "23. 6. 2024"
-      },
-      "items": [
-        {
-          "id": 1,
-          "quantity": 1,
-          "unit": "",
-          "item": "Faktura za zednické práce prováděné na bytových domech pro vaši firmu",
-          "price": "9460",
-          "totalPrice": "9460.00"
-        }
-      ],
-      "totalSum": "9460.00"
-    },
+   
     {
       "id": "ea54",
       "documentTitle": "Faktura 20240025",
